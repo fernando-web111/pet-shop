@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #F2F7F5;
+  --surface: #FFFFFF;
+  --ink: #153F3B;
+  --ink-soft: #4E6E69;
+  --line: #DCEAE6;
+
+  --brand: #1F8A73;
+  --brand-dark: #146856;
+  --brand-soft: #DDF0EA;
+
+  --accent: #F2A93B;
+  --accent-dark: #D6901F;
+
+  --coral: #EF6F53;
+  --coral-soft: #FCE3DC;
+
+  --radius: 16px;
+  --shadow-sm: 0 1px 3px rgba(21,63,59,0.08);
+  --shadow-md: 0 10px 26px rgba(21,63,59,0.12);
+
+  --font-display: 'Fredoka', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 600; color: var(--ink); }
+
+a { color: inherit; text-decoration: none; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* ---------- Botões ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  font-weight: 600; font-size: 0.92rem; padding: 0.75rem 1.4rem; border-radius: 999px;
+  border: none; cursor: pointer; transition: transform 0.15s ease, background 0.2s ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn-primary { background: var(--brand); color: white; }
+.btn-primary:hover { background: var(--brand-dark); }
+.btn-accent { background: var(--accent); color: var(--ink); }
+.btn-accent:hover { background: var(--accent-dark); color: white; }
+.btn-lg { padding: 1rem 2rem; font-size: 1rem; }
+.btn-block { width: 100%; }
+.btn-outline { background: transparent; color: var(--brand-dark); border: 1.5px solid var(--brand); }
+.btn-outline:hover { background: var(--brand-soft); }
+
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+.user-chip { display: flex; align-items: center; gap: 0.6rem; background: var(--brand-soft); padding: 0.4rem 0.9rem 0.4rem 0.4rem; border-radius: 999px; }
+.user-chip .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
+.user-chip span.name { font-weight: 600; font-size: 0.85rem; color: var(--brand-dark); }
+
+.logged-chip { margin-bottom: 1rem; }
+.logged-chip .pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--brand-soft); color: var(--brand-dark); padding: 0.5rem 0.9rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; }
+
+/* ---------- Modal (login/cadastro) ---------- */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(21,63,59,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
+.modal-overlay.active { display: flex; }
+.modal-box { background: var(--surface); border-radius: var(--radius); width: 100%; max-width: 420px; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-md); }
+.modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--line); }
+.modal-head h3 { font-size: 1.1rem; }
+.modal-close { background: var(--bg); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; color: var(--ink-soft); }
+.modal-body { padding: 1.5rem; }
+.modal-foot { padding: 1.1rem 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 0.6rem; }
+
+/* ---------- Login gate ---------- */
+.login-gate { padding: 1rem 0; }
+
+/* ---------- Header ---------- */
+.topbar { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
+.topbar-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; gap: 1.5rem; }
+.brand { font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: var(--brand-dark); display: flex; align-items: center; gap: 0.4rem; }
+.topnav { display: flex; gap: 1.75rem; }
+.topnav a { font-weight: 600; font-size: 0.92rem; color: var(--ink-soft); }
+.topnav a:hover { color: var(--brand-dark); }
+
+/* ---------- Hero ---------- */
+.hero { padding: 4rem 0; }
+.hero-inner { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; }
+.hero-text { flex: 1.1; min-width: 300px; }
+.hero-text h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 1rem; max-width: 520px; }
+.hero-text p { color: var(--ink-soft); font-size: 1.05rem; margin-bottom: 1.75rem; max-width: 460px; }
+.hero-visual { flex: 1; min-width: 280px; display: flex; justify-content: center; }
+
+/* ---------- Plaquinha (elemento de assinatura) ---------- */
+.tag-card {
+  position: relative; background: var(--surface); border-radius: 28px 28px 40px 40px;
+  padding: 2rem 1.75rem 1.75rem; width: 100%; max-width: 320px; box-shadow: var(--shadow-md);
+  border: 3px solid var(--brand);
+}
+.tag-hole {
+  position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+  width: 18px; height: 18px; border-radius: 50%; background: var(--bg); border: 3px solid var(--brand);
+}
+.tag-eyebrow { font-size: 0.72rem; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+.tag-pet { font-size: 1.6rem; margin-bottom: 0.6rem; color: var(--ink); }
+.tag-line { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
+.tag-placeholder { color: var(--ink-soft); font-size: 0.88rem; font-style: italic; }
+
+/* ---------- Seções ---------- */
+.section { padding: 4rem 0; }
+.section-alt { background: var(--surface); }
+.section h2 { font-size: 1.9rem; margin-bottom: 0.4rem; }
+.section-sub { color: var(--ink-soft); margin-bottom: 2.25rem; max-width: 560px; }
+
+/* ---------- Serviços ---------- */
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.service-card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.75rem 1.5rem;
+  text-align: left; box-shadow: var(--shadow-sm);
+}
+.service-card.featured { background: var(--brand); border-color: var(--brand); color: white; }
+.service-card.featured h3, .service-card.featured .service-price { color: white; }
+.service-card.featured p { color: rgba(255,255,255,0.85); }
+.service-icon { font-size: 1.8rem; display: block; margin-bottom: 0.75rem; }
+.service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+.service-card p { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 1rem; }
+.service-price { display: inline-block; font-weight: 700; font-size: 0.85rem; color: var(--brand-dark); }
+
+/* ---------- Formulário de agendamento ---------- */
+.booking-layout { display: grid; grid-template-columns: 1.4fr 1fr; gap: 2.5rem; align-items: start; }
+.booking-form { background: var(--bg); border-radius: var(--radius); padding: 1.75rem; }
+
+fieldset { border: none; margin-bottom: 1.5rem; }
+legend { font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; margin-bottom: 1rem; color: var(--brand-dark); padding: 0; }
+
+.field { margin-bottom: 1rem; }
+.field label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 0.4rem; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: 0.75rem 0.9rem; border: 1.5px solid var(--line); border-radius: 10px;
+  font-family: var(--font-body); font-size: 0.92rem; background: var(--surface);
+}
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--brand); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.checkbox-group { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+.checkbox-pill {
+  display: flex; align-items: center; gap: 0.4rem; background: var(--surface); border: 1.5px solid var(--line);
+  border-radius: 999px; padding: 0.55rem 1rem; font-size: 0.85rem; font-weight: 600; cursor: pointer; color: var(--ink-soft);
+}
+.checkbox-pill:has(input:checked) { background: var(--brand-soft); border-color: var(--brand); color: var(--brand-dark); }
+.checkbox-pill input { width: auto; accent-color: var(--brand); }
+
+.field-error { color: var(--coral); font-size: 0.8rem; margin-top: 0.5rem; display: none; }
+.field-error.show { display: block; }
+
+.booking-summary { position: sticky; top: 100px; }
+.booking-summary .tag-card { max-width: none; margin-bottom: 1.25rem; }
+
+.demo-note {
+  background: var(--coral-soft); color: #A5432D; border-radius: 12px; padding: 0.9rem 1.1rem;
+  font-size: 0.8rem; border: 1px dashed var(--coral);
+}
+
+#resumoConteudo .tag-line strong { color: var(--ink); }
+
+/* ---------- Footer ---------- */
+.footer { background: var(--ink); color: rgba(255,255,255,0.8); padding: 2.5rem 0; margin-top: 2rem; }
+.footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+.footer p { font-size: 0.85rem; margin-top: 0.3rem; }
+
+/* ---------- Botão flutuante WhatsApp ---------- */
+.fab-whats {
+  position: fixed; bottom: 24px; right: 24px; width: 58px; height: 58px; border-radius: 50%;
+  background: var(--brand); color: white; font-size: 1.5rem; border: none; cursor: pointer;
+  box-shadow: var(--shadow-md); z-index: 300;
+}
+.fab-whats:hover { background: var(--brand-dark); }
+
+/* ---------- Toast ---------- */
+.toast {
+  position: fixed; bottom: 24px; left: 24px; background: var(--ink); color: white; padding: 0.8rem 1.2rem;
+  border-radius: 10px; font-size: 0.85rem; font-weight: 600; z-index: 3000; opacity: 0; transform: translateY(10px);
+  transition: all 0.2s ease; box-shadow: var(--shadow-md);
+}
+.toast-show { opacity: 1; transform: translateY(0); }
+.toast-error { background: var(--coral); }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .topnav { display: none; }
+  .booking-layout { grid-template-columns: 1fr; }
+  .booking-summary { position: static; }
+  .field-row { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size: 2rem; }
+}

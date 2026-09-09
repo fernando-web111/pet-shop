@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focinho Feliz — Banho e Tosa</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="container topbar-inner">
+    <div class="brand">🐾 Focinho Feliz</div>
+    <nav class="topnav">
+      <a href="#inicio">Início</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#agendar">Agendar</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="header-actions" id="headerActions">
+      <button class="btn btn-outline" id="btnAbrirLogin">Entrar</button>
+      <button class="btn btn-primary" id="btnAbrirCadastro">Criar conta</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <h1>Banho e tosa com hora marcada, sem complicação.</h1>
+      <p>Escolha o serviço, o dia e o horário. Confirmamos tudo direto no seu WhatsApp.</p>
+      <a href="#agendar" class="btn btn-accent btn-lg">Marcar banho do meu pet</a>
+    </div>
+    <div class="hero-visual">
+      <div class="tag-card">
+        <div class="tag-hole"></div>
+        <p class="tag-eyebrow">Plaquinha do agendamento</p>
+        <h3 class="tag-pet">Thor</h3>
+        <p class="tag-line">🐕 Golden Retriever · Porte grande</p>
+        <p class="tag-line">🛁 Banho + Tosa higiênica</p>
+        <p class="tag-line">📅 Sáb, 14/09 às 10:00</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section class="section" id="servicos">
+  <div class="container">
+    <h2>Nossos serviços</h2>
+    <p class="section-sub">O valor final varia conforme o porte do animal — você confirma tudo antes de enviar.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🛁</span>
+        <h3>Banho</h3>
+        <p>Shampoo neutro ou específico para o pelo, secagem e escovação.</p>
+        <span class="service-price">a partir de R$ 40</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">✂️</span>
+        <h3>Tosa</h3>
+        <p>Tosa higiênica, na tesoura ou na máquina, do jeito que o pet precisar.</p>
+        <span class="service-price">a partir de R$ 45</span>
+      </div>
+      <div class="service-card featured">
+        <span class="service-icon">🐾</span>
+        <h3>Banho + Tosa</h3>
+        <p>Pacote completo: banho, secagem, tosa e acabamento.</p>
+        <span class="service-price">a partir de R$ 75</span>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">💧</span>
+        <h3>Hidratação</h3>
+        <p>Tratamento para pelos ressecados, opacos ou com queda excessiva.</p>
+        <span class="service-price">a partir de R$ 35</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDAMENTO -->
+<section class="section section-alt" id="agendar">
+  <div class="container">
+    <h2>Agendar banho e tosa</h2>
+    <p class="section-sub">Preencha os dados abaixo. Ao confirmar, vamos abrir o WhatsApp com a mensagem pronta para você enviar.</p>
+
+    <div class="login-gate" id="loginGate">
+      <div class="tag-card" style="max-width:420px; margin:0 auto; text-align:center;">
+        <div class="tag-hole"></div>
+        <p class="tag-eyebrow">Área de agendamento</p>
+        <h3 style="margin-bottom:0.75rem;">Entre ou crie sua conta</h3>
+        <p style="color:var(--ink-soft); font-size:0.9rem; margin-bottom:1.25rem;">Para enviar o agendamento direto no nosso WhatsApp, você precisa estar logado.</p>
+        <div style="display:flex; gap:0.75rem; justify-content:center; flex-wrap:wrap;">
+          <button class="btn btn-primary" id="btnGateLogin">Entrar</button>
+          <button class="btn btn-accent" id="btnGateCadastro">Criar conta</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-layout" id="bookingLayout" style="display:none;">
+      <form id="formAgendamento" class="booking-form">
+        <div class="logged-chip" id="loggedChip"></div>
+
+        <fieldset>
+          <legend>Seus dados</legend>
+          <div class="field">
+            <label for="tutorNome">Seu nome</label>
+            <input type="text" id="tutorNome" required placeholder="Como podemos te chamar?">
+          </div>
+          <div class="field">
+            <label for="tutorWhats">Seu WhatsApp</label>
+            <input type="tel" id="tutorWhats" required placeholder="(41) 99999-9999">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Dados do pet</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="petNome">Nome do pet</label>
+              <input type="text" id="petNome" required placeholder="Ex: Thor">
+            </div>
+            <div class="field">
+              <label for="petEspecie">Espécie</label>
+              <select id="petEspecie" required>
+                <option value="Cão">Cão</option>
+                <option value="Gato">Gato</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="petRaca">Raça</label>
+              <input type="text" id="petRaca" required placeholder="Ex: Golden Retriever, SRD...">
+            </div>
+            <div class="field">
+              <label for="petPorte">Porte</label>
+              <select id="petPorte" required>
+                <option value="Pequeno">Pequeno (até 10kg)</option>
+                <option value="Médio">Médio (10 a 25kg)</option>
+                <option value="Grande">Grande (acima de 25kg)</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>O que precisa ser feito</legend>
+          <div class="checkbox-group" id="servicosCheckbox">
+            <label class="checkbox-pill"><input type="checkbox" name="servico" value="Banho"> Banho</label>
+            <label class="checkbox-pill"><input type="checkbox" name="servico" value="Tosa"> Tosa</label>
+            <label class="checkbox-pill"><input type="checkbox" name="servico" value="Hidratação"> Hidratação</label>
+            <label class="checkbox-pill"><input type="checkbox" name="servico" value="Corte de unhas"> Corte de unhas</label>
+            <label class="checkbox-pill"><input type="checkbox" name="servico" value="Limpeza de ouvido"> Limpeza de ouvido</label>
+          </div>
+          <p class="field-error" id="servicoErro">Selecione pelo menos um serviço.</p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Data e horário</legend>
+          <div class="field-row">
+            <div class="field">
+              <label for="agendaData">Data</label>
+              <input type="date" id="agendaData" required>
+            </div>
+            <div class="field">
+              <label for="agendaHora">Horário</label>
+              <select id="agendaHora" required></select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Observações (opcional)</legend>
+          <div class="field">
+            <textarea id="petObs" rows="3" placeholder="Ex: meu pet é agitado, tem alergia a algum produto, tosa curta..."></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn btn-accent btn-lg btn-block">Confirmar e enviar pelo WhatsApp</button>
+      </form>
+
+      <!-- Resumo / plaquinha de confirmação -->
+      <div class="booking-summary">
+        <div class="tag-card" id="resumoTag">
+          <div class="tag-hole"></div>
+          <p class="tag-eyebrow">Resumo do agendamento</p>
+          <div id="resumoConteudo">
+            <p class="tag-placeholder">Preencha o formulário para ver o resumo aqui.</p>
+          </div>
+        </div>
+        <div class="demo-note">
+          O navegador não envia WhatsApp sozinho — ao confirmar, abrimos o WhatsApp com a mensagem já pronta para você (ou o tutor) apertar "enviar".
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTATO -->
+<footer class="footer" id="contato">
+  <div class="container footer-inner">
+    <div>
+      <div class="brand" style="color:white;">🐾 Focinho Feliz</div>
+      <p>Rua das Tulipas, 120 — Centro</p>
+      <p>Seg a sáb, 08h às 18h</p>
+    </div>
+    <a class="btn btn-accent" id="btnWhatsFooter" href="#" target="_blank" rel="noopener">Falar no WhatsApp</a>
+  </div>
+</footer>
+
+<button class="fab-whats" id="btnFabWhats" title="Falar no WhatsApp">🐾</button>
+
+<!-- ============ MODAL LOGIN ============ -->
+<div class="modal-overlay" id="modalLogin">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Entrar na minha conta</h3><button class="modal-close" data-close="modalLogin">&times;</button></div>
+    <form id="formLogin">
+      <div class="modal-body">
+        <div class="field"><label>E-mail</label><input type="email" id="loginEmail" required></div>
+        <div class="field"><label>Senha</label><input type="password" id="loginSenha" required></div>
+      </div>
+      <div class="modal-foot" style="justify-content:space-between; align-items:center;">
+        <span style="font-size:0.85rem; color:var(--ink-soft);">Não tem conta? <a href="#" id="linkIrCadastro" style="color:var(--brand-dark); font-weight:700;">Cadastre-se</a></span>
+        <button type="submit" class="btn btn-primary">Entrar</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ MODAL CADASTRO ============ -->
+<div class="modal-overlay" id="modalCadastro">
+  <div class="modal-box">
+    <div class="modal-head"><h3>Criar minha conta</h3><button class="modal-close" data-close="modalCadastro">&times;</button></div>
+    <form id="formCadastro">
+      <div class="modal-body">
+        <div class="field"><label>Nome</label><input type="text" id="cadNome" required></div>
+        <div class="field"><label>Seu WhatsApp</label><input type="tel" id="cadWhats" placeholder="(41) 99999-9999" required></div>
+        <div class="field"><label>E-mail</label><input type="email" id="cadEmail" required></div>
+        <div class="field-row">
+          <div class="field"><label>Senha</label><input type="password" id="cadSenha" required minlength="6"></div>
+          <div class="field"><label>Confirmar senha</label><input type="password" id="cadConfirmar" required minlength="6"></div>
+        </div>
+        <p class="field-error show" id="cadastroErro" style="display:none;"></p>
+      </div>
+      <div class="modal-foot" style="justify-content:space-between; align-items:center;">
+        <span style="font-size:0.85rem; color:var(--ink-soft);">Já tem conta? <a href="#" id="linkIrLogin" style="color:var(--brand-dark); font-weight:700;">Entrar</a></span>
+        <button type="submit" class="btn btn-primary">Criar conta</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
