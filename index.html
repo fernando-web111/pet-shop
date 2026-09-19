@@ -192,46 +192,6 @@
 
 <button class="fab-whats" id="btnFabWhats" title="Falar no WhatsApp">🐾</button>
 
-<!-- ============ MODAL LOGIN ============ -->
-<div class="modal-overlay" id="modalLogin">
-  <div class="modal-box">
-    <div class="modal-head"><h3>Entrar na minha conta</h3><button class="modal-close" data-close="modalLogin">&times;</button></div>
-    <form id="formLogin">
-      <div class="modal-body">
-        <div class="field"><label>E-mail</label><input type="email" id="loginEmail" required></div>
-        <div class="field"><label>Senha</label><input type="password" id="loginSenha" required></div>
-      </div>
-      <div class="modal-foot" style="justify-content:space-between; align-items:center;">
-        <span style="font-size:0.85rem; color:var(--ink-soft);">Não tem conta? <a href="#" id="linkIrCadastro" style="color:var(--brand-dark); font-weight:700;">Cadastre-se</a></span>
-        <button type="submit" class="btn btn-primary">Entrar</button>
-      </div>
-    </form>
-  </div>
-</div>
-
-<!-- ============ MODAL CADASTRO ============ -->
-<div class="modal-overlay" id="modalCadastro">
-  <div class="modal-box">
-    <div class="modal-head"><h3>Criar minha conta</h3><button class="modal-close" data-close="modalCadastro">&times;</button></div>
-    <form id="formCadastro">
-      <div class="modal-body">
-        <div class="field"><label>Nome</label><input type="text" id="cadNome" required></div>
-        <div class="field"><label>Seu WhatsApp</label><input type="tel" id="cadWhats" placeholder="(41) 99999-9999" required></div>
-        <div class="field"><label>E-mail</label><input type="email" id="cadEmail" required></div>
-        <div class="field-row">
-          <div class="field"><label>Senha</label><input type="password" id="cadSenha" required minlength="6"></div>
-          <div class="field"><label>Confirmar senha</label><input type="password" id="cadConfirmar" required minlength="6"></div>
-        </div>
-        <p class="field-error show" id="cadastroErro" style="display:none;"></p>
-      </div>
-      <div class="modal-foot" style="justify-content:space-between; align-items:center;">
-        <span style="font-size:0.85rem; color:var(--ink-soft);">Já tem conta? <a href="#" id="linkIrLogin" style="color:var(--brand-dark); font-weight:700;">Entrar</a></span>
-        <button type="submit" class="btn btn-primary">Criar conta</button>
-      </div>
-    </form>
-  </div>
-</div>
-
 <script src="script.js"></script>
 </body>
 </html>
