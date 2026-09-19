@@ -54,26 +54,7 @@ a { color: inherit; text-decoration: none; }
 .btn-outline { background: transparent; color: var(--brand-dark); border: 1.5px solid var(--brand); }
 .btn-outline:hover { background: var(--brand-soft); }
 
-.header-actions { display: flex; align-items: center; gap: 0.75rem; }
-.user-chip { display: flex; align-items: center; gap: 0.6rem; background: var(--brand-soft); padding: 0.4rem 0.9rem 0.4rem 0.4rem; border-radius: 999px; }
-.user-chip .avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--brand); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.8rem; }
-.user-chip span.name { font-weight: 600; font-size: 0.85rem; color: var(--brand-dark); }
 
-.logged-chip { margin-bottom: 1rem; }
-.logged-chip .pill { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--brand-soft); color: var(--brand-dark); padding: 0.5rem 0.9rem; border-radius: 999px; font-size: 0.82rem; font-weight: 600; }
-
-/* ---------- Modal (login/cadastro) ---------- */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(21,63,59,0.5); z-index: 1000; align-items: center; justify-content: center; padding: 1rem; }
-.modal-overlay.active { display: flex; }
-.modal-box { background: var(--surface); border-radius: var(--radius); width: 100%; max-width: 420px; max-height: 90vh; overflow-y: auto; box-shadow: var(--shadow-md); }
-.modal-head { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--line); }
-.modal-head h3 { font-size: 1.1rem; }
-.modal-close { background: var(--bg); border: none; width: 30px; height: 30px; border-radius: 50%; font-size: 1.1rem; cursor: pointer; color: var(--ink-soft); }
-.modal-body { padding: 1.5rem; }
-.modal-foot { padding: 1.1rem 1.5rem; border-top: 1px solid var(--line); display: flex; justify-content: flex-end; gap: 0.6rem; }
-
-/* ---------- Login gate ---------- */
-.login-gate { padding: 1rem 0; }
 
 /* ---------- Header ---------- */
 .topbar { background: var(--surface); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 100; }
@@ -104,6 +85,8 @@ a { color: inherit; text-decoration: none; }
 .tag-eyebrow { font-size: 0.72rem; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: 0.04em; margin-top: 0.5rem; margin-bottom: 0.5rem; }
 .tag-pet { font-size: 1.6rem; margin-bottom: 0.6rem; color: var(--ink); }
 .tag-line { font-size: 0.9rem; color: var(--ink-soft); margin-bottom: 0.4rem; }
+.tag-foto { display: block; width: 100%; height: 180px; object-fit: cover; border-radius: 16px; margin-bottom: 0.9rem; }
+.tag-foto[hidden] { display: none; }
 .tag-placeholder { color: var(--ink-soft); font-size: 0.88rem; font-style: italic; }
 
 /* ---------- Seções ---------- */
@@ -120,7 +103,7 @@ a { color: inherit; text-decoration: none; }
 }
 .service-card.featured { background: var(--brand); border-color: var(--brand); color: white; }
 .service-card.featured h3, .service-card.featured .service-price { color: white; }
-.service-card.featured p { color: rgba(255, 255, 255, 0.342); }
+.service-card.featured p { color: rgba(255, 255, 255, 0.85); }
 .service-icon { font-size: 1.8rem; display: block; margin-bottom: 0.75rem; }
 .service-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
 .service-card p { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 1rem; }
